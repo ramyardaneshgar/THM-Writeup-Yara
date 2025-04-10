@@ -93,9 +93,7 @@ These modules can be used in the `condition` block to detect specific file chara
 
 ---
 
-## Task 7: Other Tools and YARA
-
-I explored tools that use YARA in real-world incident response:
+## Task 7: Other Tools 
 
 ### Loki
 
@@ -244,6 +242,6 @@ This didn’t change rule logic but provided documentation useful during large-s
 3. **Using `strings` for static analysis** – helps extract meaningful indicators before writing rules.
 4. **Hex pattern matching with wildcards** – crucial for detecting shellcode and obfuscated malware.
 5. **`pe` and other YARA modules provide deep binary inspection** – useful for targeting specific file formats.
-6. **Loki operationalizes YARA rules for real-world IOC scanning** – supports endpoint triage and automation.
+6. **Loki operationalizes YARA rules for IOC scanning** – supports endpoint triage and automation.
 7. **Logical operators improve rule precision** – helps reduce false positives in detection logic.
 8. **Testing rules is essential** – ensures accuracy before integration into detection pipelines.
