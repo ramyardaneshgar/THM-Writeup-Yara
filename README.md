@@ -237,12 +237,6 @@ This didn’t change rule logic but provided documentation useful during large-s
 
 ---
 
-## Summary
-
-Here are the **Lessons Learned** from completing the TryHackMe YARA room:
-
----
-
 ### **Lessons Learned**
 
 1. **YARA is foundational for malware detection**  
