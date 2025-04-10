@@ -1,5 +1,5 @@
 # THM-Writeup-Yara
-Threat hunting using Yara, strings, and Loki to build custom rules and run scans for IOC, hex, and behavioral malware detection.
+TryHackMe Yara Lab: Threat hunting using Yara, strings, and Loki to build custom rules and run scans for IOC, hex, and behavioral malware detection.
 
 By Ramyar Daneshgar
 
