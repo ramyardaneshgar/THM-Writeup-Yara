@@ -1,5 +1,5 @@
 # THM-Writeup-Yara
-Threat hunting using Yara, strings, and Loki to build 10+ custom rules and run 50+ scans for IOC, hex, and behavioral malware detection.
+Threat hunting using Yara, strings, and Loki to build custom rules and run scans for IOC, hex, and behavioral malware detection.
 
 By Ramyar Daneshgar
 
@@ -237,35 +237,13 @@ This didn’t change rule logic but provided documentation useful during large-s
 
 ---
 
-### **Lessons Learned**
+# Lessons Learned
 
-1. **YARA is foundational for malware detection**  
-   I learned how YARA rules function as pattern-matching logic that can detect malware by looking for strings, hexadecimal byte sequences, or file structure characteristics. These rules form the basis of many endpoint detection tools.
-
-2. **Rule structure is modular and readable**  
-   YARA rules consist of `meta`, `strings`, and `condition` sections, making them both powerful and human-readable. This modularity allows rapid rule creation, auditing, and sharing across incident response teams.
-
-3. **Static analysis with `strings` is a key discovery step**  
-   Before writing a rule, using `strings <file>` helped me extract plaintext values that could serve as indicators. This technique allowed me to create more precise, signature-based detections.
-
-4. **Hexadecimal pattern matching is ideal for shellcode and obfuscation**  
-   The ability to define byte patterns using `{}` and wildcards (`??`) is essential when detecting low-level malware behavior that doesn't contain readable strings. This is especially useful in packed or obfuscated binaries.
-
-5. **YARA modules add advanced binary introspection**  
-   Modules like `pe` allowed me to build rules based on PE header information, import tables, or section characteristics—crucial for detecting specific malware families or packing techniques.
-
-6. **Tools like Loki operationalize YARA**  
-   I gained practical experience using Loki, which wraps YARA into a usable IOC scanner for filesystems. It's lightweight and can be used in live environments for triaging suspicious hosts.
-
-7. **Logical operators enhance rule precision**  
-   By chaining strings with AND/OR/NOT, I could create rules that detected more specific combinations of indicators, reducing false positives in noisy datasets.
-
-8. **Metadata aids attribution and rule lifecycle management**  
-   Including author, description, and date in the `meta` section makes it easier to manage rules over time, especially when they are shared across SOC teams or imported into scanning engines.
-
-9. **Testing and tuning rules is critical**  
-   Writing a rule is only part of the process. Verifying its effectiveness using YARA CLI or tools like Loki ensures that it accurately identifies the intended threat while avoiding false matches.
-
-10. **YARA knowledge scales across threat hunting, DFIR, and red teaming**  
-   Whether I’m hunting for APT indicators, building behavioral detections, or testing my own payloads, YARA remains a flexible and powerful tool in any security workflow.
-
+1. **YARA is foundational for malware detection** – core to static analysis, threat hunting, and DFIR.
+2. **Rule structure (`meta`, `strings`, `condition`) is modular and easy to manage** – enables quick development and sharing of detections.
+3. **Using `strings` for static analysis** – helps extract meaningful indicators before writing rules.
+4. **Hex pattern matching with wildcards** – crucial for detecting shellcode and obfuscated malware.
+5. **`pe` and other YARA modules provide deep binary inspection** – useful for targeting specific file formats.
+6. **Loki operationalizes YARA rules for real-world IOC scanning** – supports endpoint triage and automation.
+7. **Logical operators improve rule precision** – helps reduce false positives in detection logic.
+8. **Testing rules is essential** – ensures accuracy before integration into detection pipelines.
